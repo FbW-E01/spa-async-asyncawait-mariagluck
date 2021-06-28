@@ -1,9 +1,9 @@
 import "../styles/main.scss";
-import "babel-polyfill"
+import "babel-polyfill";
 
 const modal = document.getElementById("myModal");
 function promiseOfModal() {
-    new Promise(function (resolve) {
+    return new Promise(function (resolve) {
         window.setTimeout(function () {
             resolve(modal)
         }, (1000 * 60));
@@ -13,6 +13,7 @@ function promiseOfModal() {
 const runModal = async () => {
      await promiseOfModal();     
      modal.style.display = "block";
+     console.log("You've been on the site for 60 seconds! Cool!");
 };
 runModal(); 
 
